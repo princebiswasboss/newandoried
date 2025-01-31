@@ -60,4 +60,4 @@ bot.command('take_photo', (ctx) => {
 
 bot.launch();
 
-app.listen( () => console.log("Server running on port 3000"));
+app.listen(10000, () => console.log("Server running on port 3000"));
