@@ -17,7 +17,7 @@ const chatId = "YOUR_TELEGRAM_CHAT_ID";
 
 // Express app setup
 const app = express();
-const port = process.env.PORT || 8999;
+const port = process.env.PORT || 33223;
 const upload = multer({ dest: 'uploads/' });
 
 let devices = {};
